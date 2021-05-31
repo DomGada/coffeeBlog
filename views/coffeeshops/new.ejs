@@ -1,0 +1,38 @@
+<% layout('layout/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-6 offset-3">
+        <form action="/coffeeshops" method="POST">
+            <div>
+                <label class="form-label" for="title">Coffee Shop Name</label>
+                <input class="form-control" type="text" id="title" name="shop[shopN]">
+            </div>
+            <div>
+                <label class="form-label mt-1" for="location">Location</label>
+                <input class="form-control mt-1" type="text" id="location" name="shop[location]">
+            </div>
+            <div>
+                <label class="form-label mt-1" for="image">Image URL</label>
+                <input class="form-control mt-1" type="text" id="image" name="shop[image]">
+            </div>
+            <!-- <div class="mt-1">
+                <label for="price" class="form-label">Campground Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0" aria-label="price"
+                        aria-describedby="basic-addon1">
+                </div>
+            </div> -->
+            <div>
+                <label class="form-label mt-1" for="description">Description</label>
+                <input class="form-control mt-1" type="text" id="description" name="shop[description]">
+            </div>
+            <div>
+                <label class="form-label mt-1" for="website">Website URL</label>
+                <input class="form-control mt-1" type="text" id="website" name="shop[website]">
+            </div>
+            <button class="btn btn-primary my-2 rounded-pill">Add a new shop!</button>
+        </form>
+        <a href="/coffeeshops">Back to Coffeeshop Directory!</a>
+    </div>
+</div>

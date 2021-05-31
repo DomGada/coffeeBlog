@@ -1,0 +1,33 @@
+<% layout('layout/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Edit Coffee Shop</h1>
+    <div class="col-6 offset-3">
+        <form action="/coffeeshops/<%=shop._id%>?_method=PUT" method="POST">
+            <div>
+                <label class="form-label" for="shopN">Coffee Shop Name</label>
+                <input class="form-control" type="text" id="shopN" name="shop[shopN]" value="<%=shop.shopN%>">
+            </div>
+            <div>
+                <label class="form-label mt-1" for="location">Location</label>
+                <input class="form-control mt-1" type="text" id="location" name="shop[location]"
+                    value="<%=shop.location%>">
+            </div>
+            <div>
+                <label class="form-label mt-1" for="image">Image URL</label>
+                <input class="form-control mt-1" type="text" id="image" name="shop[image]" value="<%=shop.image%> ">
+            </div>
+            <div>
+                <label class="form-label mt-1" for="website">Image URL</label>
+                <input class="form-control mt-1" type="text" id="website" name="shop[website]"
+                    value="<%=shop.website%> ">
+            </div>
+            <div>
+                <label class="form-label mt-1" for="description">Description</label>
+                <textarea class="form-control mt-1" type="text" id="description"
+                    name="shop[description]"><%=shop.description%> </textarea>
+            </div>
+            <button class="btn btn-primary my-2 rounded-pill">Save Edits</button>
+        </form>
+        <a href="/coffeeshops">Back to all camgrounds!</a>
+    </div>
+</div>

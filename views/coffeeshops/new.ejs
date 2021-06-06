@@ -1,19 +1,19 @@
 <% layout('layout/boilerplate')%>
 <div class="row">
-    <h1 class="text-center">New Campground</h1>
+    <h1 class="text-center">New Coffeeshop</h1>
     <div class="col-6 offset-3">
-        <form action="/coffeeshops" method="POST">
+        <form action="/coffeeshops" class="validated-form" method="POST" novalidate>
             <div>
                 <label class="form-label" for="title">Coffee Shop Name</label>
-                <input class="form-control" type="text" id="title" name="shop[shopN]">
+                <input class="form-control" type="text" id="title" name="shop[shopN]" required>
             </div>
             <div>
                 <label class="form-label mt-1" for="location">Location</label>
-                <input class="form-control mt-1" type="text" id="location" name="shop[location]">
+                <input class="form-control mt-1" type="text" id="location" name="shop[location]" required>
             </div>
             <div>
                 <label class="form-label mt-1" for="image">Image URL</label>
-                <input class="form-control mt-1" type="text" id="image" name="shop[image]">
+                <input class="form-control mt-1" type="text" id="image" name="shop[image]" required>
             </div>
             <!-- <div class="mt-1">
                 <label for="price" class="form-label">Campground Price</label>
@@ -25,14 +25,37 @@
             </div> -->
             <div>
                 <label class="form-label mt-1" for="description">Description</label>
-                <input class="form-control mt-1" type="text" id="description" name="shop[description]">
+                <input class="form-control mt-1" type="text" id="description" name="shop[description]" required>
             </div>
             <div>
                 <label class="form-label mt-1" for="website">Website URL</label>
-                <input class="form-control mt-1" type="text" id="website" name="shop[website]">
+                <input class="form-control mt-1" type="text" id="website" name="shop[website]" required>
             </div>
             <button class="btn btn-primary my-2 rounded-pill">Add a new shop!</button>
         </form>
         <a href="/coffeeshops">Back to Coffeeshop Directory!</a>
     </div>
 </div>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.validated-form')
+
+        // Loop over them and prevent submission
+        Array.from(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
